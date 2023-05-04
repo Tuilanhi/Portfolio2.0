@@ -47,6 +47,19 @@ body {
   font-family: var(--font-body);
   line-height: 1.5;
   color: var(--accent-light);
+  text-rendering: optimizeLegibility;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 h1,
@@ -62,8 +75,9 @@ p {
 }
 
 a {
-  color: #3273dc;
+  color: var(--accent-dark);
 }
+
 nav a {
   margin-right: 10px;
 }

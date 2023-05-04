@@ -1,7 +1,5 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
-
-type Props = HTMLAttributes<'a'>;
+export interface Props extends astroHTML.JSX.AnchorHTMLAttributes {}
 
 const { href, class: className, ...props } = Astro.props;
 
@@ -14,8 +12,10 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, '');
 </a>
 <style>
 	a {
-		display: inline-block;
+		display: inline-flex;
 		text-decoration: none;
+		align-items: center;
+		gap: 4px;
 	}
 	a.active {
 		font-weight: bolder;
