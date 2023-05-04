@@ -35,6 +35,7 @@
   --font-body: "Public Sans", var(--font-system);
   --font-brand: Rubik, var(--font-system);
 }
+
 html,
 body {
   height: 100%;
@@ -42,19 +43,12 @@ body {
 }
 
 body {
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  margin: auto;
-  padding: 20px;
-  max-width: 65ch;
-  text-align: left;
   background-color: var(--black);
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  font-family: var(--font-body);
   line-height: 1.5;
-  color: #444;
+  color: var(--accent-light);
 }
+
 h1,
 h2,
 h3,
@@ -62,9 +56,11 @@ h4,
 h5,
 h6,
 strong,
-b {
-  color: #222;
+b,
+p {
+  color: var(--accent-light);
 }
+
 a {
   color: #3273dc;
 }
@@ -90,7 +86,9 @@ img {
 }
 code {
   padding: 2px 5px;
-  background-color: #f2f2f2;
+  background-color: var(--accent-dark);
+  opacity: 0.5;
+  color: var(--white);
 }
 pre {
   padding: 1rem;
