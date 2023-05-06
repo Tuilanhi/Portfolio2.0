@@ -1,12 +1,13 @@
 ---
-import HeaderLink from './HeaderLink.astro';
+import HeaderLink from "./HeaderLink.astro";
 
 // Astro.glob() is a way to load many local files into static site setup
-const posts = await Astro.glob('../content/blog/*.md');
+const posts = await Astro.glob("../content/blog/*.md");
 const allTags = new Set<string>();
-posts.map(post => {
-	post.frontmatter.tags && post.frontmatter.tags.map((tag: string) => allTags.add(tag))
-})
+posts.map((post) => {
+  post.frontmatter.tags &&
+    post.frontmatter.tags.map((tag: string) => allTags.add(tag));
+});
 
 /*
 w-full: sets the width of the header element to 100% of its parent container
@@ -25,19 +26,19 @@ hidden md:flex: hidden hides the element on screens smaller than the "medium" br
 
 */
 ---
-<header class="relative w-full p-2 z-20 mb-8">
-	<div class="mx-auto max-w-3xl">
-		<nav class="flex items-center justify-between gap-3 text-base">
-			<a href="/" class="group">
-				<h2 class="tracking-wide p-2 font-mplus text-lg">
-					Nhi Vu
-				</h2>
-			</a>
-			<div class="items-center gap-6 hidden md:flex">
-				<HeaderLink href="/blog">Blog</HeaderLink>
-				<HeaderLink href="/about">About</HeaderLink>
-				<div class="ml-auto"></div>
-			</div>
-		</nav>
-	</div>
+
+<header class="relative z-20 mb-8 w-full p-2">
+  <div class="mx-auto max-w-3xl">
+    <nav class="flex items-center justify-between gap-3 text-base">
+      <a href="/" class="group">
+        <h2 class="font-mplus font-semibold p-2 text-lg tracking-wide">Nhi Vu</h2>
+      </a>
+      <div class="hidden items-center gap-6 md:flex">
+        <HeaderLink href="/blog">Blog</HeaderLink>
+        <HeaderLink href="/about">About</HeaderLink>
+        <HeaderLink href="/work">Works</HeaderLink>
+        <div class="ml-auto flex-1"></div>
+      </div>
+    </nav>
+  </div>
 </header>
