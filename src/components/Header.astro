@@ -1,39 +1,22 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
-
-// Astro.glob() is a way to load many local files into static site setup
-const posts = await Astro.glob("../content/blog/*.md");
-const allTags = new Set<string>();
-posts.map((post) => {
-  post.frontmatter.tags &&
-    post.frontmatter.tags.map((tag: string) => allTags.add(tag));
-});
-
-/*
-w-full: sets the width of the header element to 100% of its parent container
-p-2: sets a padding of 2 units on all sides 
-z-20: sets the "z-index" property of the header element to 20. Elements with higher z value will appear on top of the elements with lower z-index values.
-backdrop-blur-md: backdrop-filter to the header element, which blurs the content behind it. "md" suffix is the intensity of the blue effect (medium)
-
-mx-auto: sets the horizontal margin of the div element to "auto", which centers it horizontally within its parent container
-max-w-3xl: sets the maximum width of the div element to 3 times the "x-large" breakpoint value.
-flex: flexible box layout, allowing its child elements to be positioned and sized dynamically according to the available space.
-items-center: centers the child element vertically 
-gap-3: adds a gap of 3 units b/w the child elements
-text-base: sets the default font size of the text content
-
-hidden md:flex: hidden hides the element on screens smaller than the "medium" breakpoint, and md:flex displays the div element as a flexible box on screens at or large than the "medium" breakpoint
-
-*/
+import DropdownMenu from './DropdownMenu';
 ---
 
 <header class="relative z-20 mb-8 w-full p-2">
   <div class="mx-auto max-w-3xl">
     <nav class="flex items-center justify-between gap-3 text-base">
       <a href="/" class="group">
-        <h2 class="font-mplus font-semibold p-2 text-lg tracking-wide">Nhi Vu</h2>
+        <h2 class="font-mplus font-semibold pt-2 text-lg tracking-wide uppercase">Nhi Thuy Vu</h2>
+        <p style="font-size: var(--text-sm);">
+          Computer Science Student
+        </p>
       </a>
-      <div class="hidden items-center gap-6 md:flex">
+      <div class="flex items-center gap-6 text-base md:hidden">
+        <DropdownMenu client:visible/>
+      </div>
+      
+      <div class="hidden md:flex items-center gap-6 text-base">
         <HeaderLink href="/blog">Blog</HeaderLink>
         <HeaderLink href="/about">About</HeaderLink>
         <HeaderLink href="/work">Works</HeaderLink>

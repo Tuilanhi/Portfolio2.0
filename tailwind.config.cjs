@@ -7,6 +7,13 @@ module.exports = {
   theme: {
     extend: {
     },
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      'white': '#ffffff',
+      'black-gray': "#1f1f1f",
+      'accent-gray': "#27272a",
+    },
   },
   plugins: [require("flowbite/plugin"), require("prettier-plugin-tailwindcss")],
 };

@@ -3,31 +3,25 @@ import { LINKEDIN_LINK, GITHUB_LINK, TWITTER_LINK } from '../consts';
 import Icon from "./Icon.astro";
 ---
 
-<section>
-    <h2 class="font-bold text-2xl my-5 text-right underline underline-offset">
+<section class="p-2">
+    <h2 class="font-bold text-2xl my-5 text-right underline underline-offset" style="font-size: var(--text-lg);">
         Social Media
     </h2>
     <ul class="flex flex-row justify-end">
         <li class="mr-4">
             <a href={TWITTER_LINK}>
-                <Icon icon="twitter-logo" size="1.5em" color="#e6c7a2"/>
+                <Icon icon="twitter-logo" size="1.1em" color="#e6c7a2"/>
             </a>
         </li>
         <li class="mr-4">
             <a href={GITHUB_LINK}>
-                <Icon icon="github-logo" size="1.5em" color="#e6c7a2"/>
+                <Icon icon="github-logo" size="1.1em" color="#e6c7a2"/>
             </a>
         </li>
         <li>
             <a href={LINKEDIN_LINK}>
-                <Icon icon="linkedin-logo" size="1.5em" color="#e6c7a2" />
+                <Icon icon="linkedin-logo" size="1.1em" color="#e6c7a2" />
             </a>
         </li>
     </ul>
 </section>
-
-<style>
-    a:hover {
-        font-size: var(--text-md);
-    }
-</style>

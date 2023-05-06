@@ -1,9 +1,10 @@
 ---
 import { NAME } from '../consts';
+const today = new Date()
 ---
 
 <footer>
-	&copy; {NAME}. All rights reserved.
+	<span>{today.getFullYear()}</span>, {NAME}. All Rights Reserved
 </footer>
 <style>
 	footer {
@@ -11,5 +12,6 @@ import { NAME } from '../consts';
 		text-align: center;
 		position: relative;
 		bottom:0;
+		font-size: var(--text-sm);
 	}
 </style>
