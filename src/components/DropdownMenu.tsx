@@ -25,6 +25,9 @@ export default function DropdownMenu() {
                 <DropdownMenuItem href="/work">
                     Works
                 </DropdownMenuItem>
+                <DropdownMenuItem href="https://drive.google.com/file/d/1kEYJiNMHdcBPOI0kir2n3yFmbb4DBuYo/view?usp=sharing">
+                    Resume
+                </DropdownMenuItem>
             </div>
         </Menu.Items>
     </Menu>
