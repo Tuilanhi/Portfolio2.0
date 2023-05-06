@@ -1,5 +1,5 @@
 import { Menu } from '@headlessui/react'
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 
 function classNames(...classes:string[]) {
     return classes.filter(Boolean).join(' ');
