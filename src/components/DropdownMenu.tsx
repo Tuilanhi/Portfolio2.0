@@ -7,7 +7,7 @@ export default function DropdownMenu() {
     <Menu as="div" className="relative inline-block text-left">
       <div>
         <Menu.Button
-          className="inline-flex justify-center rounded-md border border-zinc-400 px-2 py-2 text-sm font-medium shadow-sm hover:bg-orange-200 hover:text-black-gray"
+          className="inline-flex justify-center rounded-md border border-zinc-400 px-2 py-2 text-sm font-medium shadow-sm hover:bg-sky-blue hover:text-black-gray"
           aria-label="menu"
         >
           <IoMenu className="h-5 w-5" />
@@ -21,9 +21,6 @@ export default function DropdownMenu() {
                 </DropdownMenuItem>
                 <DropdownMenuItem href="/about">
                     About
-                </DropdownMenuItem>
-                <DropdownMenuItem href="/work">
-                    Works
                 </DropdownMenuItem>
                 <DropdownMenuItem href="https://drive.google.com/file/d/1kEYJiNMHdcBPOI0kir2n3yFmbb4DBuYo/view?usp=sharing">
                     Resume

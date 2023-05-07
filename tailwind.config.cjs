@@ -13,6 +13,7 @@ module.exports = {
       'white': '#ffffff',
       'black-gray': "#1f1f1f",
       'accent-gray': "#27272a",
+      'sky-blue': '#c6d8f4',
     },
   },
   plugins: [require("flowbite/plugin"), require("prettier-plugin-tailwindcss")],

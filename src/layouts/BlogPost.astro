@@ -1,51 +1,67 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
-
-type Props = CollectionEntry<'blog'>['data'];
-
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Body from '../components/Body.astro'
+import Content from '../components/Content.astro'
+import { SITE_TITLE } from '../consts'
+import Icon from '../components/Icon.astro'
+export interface Props {
+  content: {
+    title: string
+    description: string
+    createdAt?: string
+    updatedAt?: string
+    heroImage?: string
+    tags: string[]
+	code: string
+	source: string
+  }
+}
+const {
+  content: { title, description, heroImage, code, source }
+} = Astro.props
 ---
 
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			.title {
-				font-size: 2em;
-				margin: 0.25em 0 0;
-			}
-			hr {
-				border-top: 1px solid #ddd;
-				margin: 1rem 0;
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
-	</head>
+  <head>
+    <BaseHead title={title + ` / ${SITE_TITLE}`} description={description} image={heroImage} />
+  </head>
 
-	<body>
-		<Header />
-		<main>
-			<article>
-				{heroImage && <img width={720} height={360} src={heroImage} alt="" />}
-				<h1 class="title">{title}</h1>
-				<FormattedDate date={pubDate} />
-				{
-					updatedDate && (
-						<div class="last-updated-on">
-							Last updated on <FormattedDate date={updatedDate} />
-						</div>
-					)
-				}
-				<hr />
-				<slot />
-			</article>
-		</main>
-		<Footer />
-	</body>
+  <Body>
+    <Header />
+    <main class="pt-[56px] mb-10">
+      <Content className="pt-6">
+		<div class="mb-8">
+			{
+			  heroImage && (
+				<img
+				  class="border border-accent-gray rounded-xl"
+				  width={720}
+				  height={360}
+				  src={heroImage}
+				  alt=""
+				/>
+			  )
+			}
+		  </div>
+        <h1 class="text-3xl my-1 font-bold text-sky-blue">{title}</h1>
+        <div class="my-4 flex">
+			<p class='mr-2'>{description}</p>
+			<Icon icon="arrow-bend-right-down" size="1.1em" color="var(--accent-light)"/>
+		</div>
+		<hr class="border-t border-zinc-400 my-4" />
+		<div class="mb-5">
+			<slot />
+		</div>
+		<div class="flex pt-2 mr-auto" style="font-size: var(--text-2sm);">
+			<span id='content-heading'>Language:</span>{code}
+		</div>
+		<div class="flex pt-2 mr-auto" style="font-size: var(--text-2sm);">
+			<span id='content-heading'>Source:</span><a href={source}><Icon icon="github-logo" size="1.1em" color="var(--accent-light)"></a>
+		</div>
+    </main>
+    <Footer />
+  </Body>
 </html>

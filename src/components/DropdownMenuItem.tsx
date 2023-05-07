@@ -17,7 +17,7 @@ type Props = {
           <a
             href={href}
             className={classNames(
-              active ? 'bg-orange-200' : '',
+              active ? 'bg-sky-blue' : '',
               'block px-4 py-2 text-lg hover:text-black'
             )}
           >

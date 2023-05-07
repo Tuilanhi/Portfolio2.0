@@ -11,11 +11,15 @@
   /* Colors */
   --accent-light: #e6c7a2;
   --accent-lighter: #f4e7d4;
+  --accent-dark: #b9792b;
   --black: #1f1f1f;
   --white: #fff;
+  --accent-sky-blue: #c6d8f4;
+  --accent-dark-blue: #5d6674;
 
   /* Text Sizes */
   --text-sm: 1.2rem;
+  --text-2sm: 1.35rem;
   --text-base: 1.5rem;
   --text-md: 1.75rem;
   --text-lg: 1.875rem;
@@ -55,4 +59,15 @@ span
 {
   color: var(--accent-lighter);
   font-style: italic;
+}
+
+#content-heading
+{
+  font-style: normal;
+  color: var(--accent-sky-blue);
+  border-radius: 5px;
+  border-color: #000;
+  background-color: var(--accent-dark-blue);
+  padding: 0px 4px 4px 4px;
+  margin-right: 0.5em;
 }
