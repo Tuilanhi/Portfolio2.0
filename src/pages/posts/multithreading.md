@@ -1,5 +1,5 @@
 ---
-description: TCP Request Channel using multi-threaded communication to connect between client and server processes
+description: TCP Request Channel using multi-threaded communication
 public: true
 layout: ../../layouts/BlogPost.astro
 title: TCP Request Channel

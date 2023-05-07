@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SocialMediaSection from '../components/SocialMediaSection.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import Newsletter from '../components/Newsletter.astro';
+import Contact from '../components/Contact.astro';
 import Body from '../components/Body.astro'
 import Content from '../components/Content.astro'
 import { getCollection } from 'astro:content';
@@ -32,21 +32,21 @@ const posts = (await Astro.glob('./posts/*.md')).sort(
 		<main class="p-60px p-8">
 			<div class="mx-auto max-w-2xl">
 				<section class="flex items-center indent-4" style="margin-top: 25rem;">
-					<p><span class="hover-sticky">{SITE_DESCRIPTION}</span>, I am a Junior Computer Science Student at <a href="https://www.tamu.edu/">Texas A&M University</a> and a lifelong learner. Even though Nuclear Engineer was my first choice back in my Freshman year, I fell in love with coding after completing my Freshman year of Engineering classes. I now strive to become a full-stack developer focused on bringing a captivating experience to users.</p>
+					<p><span class="hover-sticky hover:tracking-wider transition-all">{SITE_DESCRIPTION}</span>, I am a Junior Computer Science Student at Texas A&M University and a lifelong learner. Even though Nuclear Engineer was my first choice back in my Freshman year, I fell in love with coding after completing my Freshman year of Engineering classes. I now strive to become a full-stack developer focused on bringing a captivating experience to users.</p>
 				</section>
 				<div class="flex items-center mt-10">
 					<h2 class="text-4xl underline underline-offset-4">
 						Works
 					</h2>
 				</div>
-				<section class="flex items-center mt-5">
+				<section class="flex items-center mt-6">
 					<ul class="grid grid-cols-1 gap-4">
 						{
 							posts.map(post => (
-							  <li class="text-center mb-4">
+							  <li class="text-center mb-4 hover:text-sky-blue hover:tracking-wider transition-all">
 								<a href={post.url}>
 								  <Image
-									class="border border-accent-gray rounded-xl transition-transform duration-300 transform hover:scale-105"
+									class="border border-accent-gray rounded-xl transition-transform duration-300 transform hover:scale-105 md:opacity-70 hover:opacity-100"
 									src={post.frontmatter.heroImage}
 									width={720 * 2}
 									aspectRatio={2}
@@ -56,7 +56,7 @@ const posts = (await Astro.glob('./posts/*.md')).sort(
 									{post.frontmatter.title}
 								  </div>
 								  {post.frontmatter.description && (
-									<div style="font-size: var(--text-2sm);">
+									<div class="pb-5 hover:text-sky-blue" style="font-size: var(--text-2sm);">
 									  {post.frontmatter.description}
 									</div>
 								  )}
@@ -67,7 +67,7 @@ const posts = (await Astro.glob('./posts/*.md')).sort(
 					</ul>
 				</section>
 				<SocialMediaSection/>
-				<Newsletter/>
+				<Contact/>
 			</div>
 			<Content/>
 		</main>

@@ -51,12 +51,11 @@ const {
 			<p class='mr-2'>{description}</p>
 			<Icon icon="arrow-bend-right-down" size="1.1em" color="var(--accent-light)"/>
 		</div>
-		<hr class="border-t border-zinc-400 my-4" />
-		<div class="mb-5">
+		<div class="mb-5 indent-4">
 			<slot />
 		</div>
 		<div class="flex pt-2 mr-auto" style="font-size: var(--text-2sm);">
-			<span id='content-heading'>Language:</span>{code}
+			<span id='content-heading'>Stack:</span>{code}
 		</div>
 		<div class="flex pt-2 mr-auto" style="font-size: var(--text-2sm);">
 			<span id='content-heading'>Source:</span><a href={source}><Icon icon="github-logo" size="1.1em" color="var(--accent-light)"></a>
