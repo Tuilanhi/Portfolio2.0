@@ -3,18 +3,19 @@ import type { HTMLAttributes } from 'astro/types';
 import {iconPaths} from "./IconPaths";
 
 export interface Props {
+    class?: string;
     icon: keyof typeof iconPaths;
     color?: string;
     size?: string;
 }
 
 const attrs: HTMLAttributes<'svg'> = {};
-const {color = 'currentcolor',icon,size} = Astro.props;
+const {color = 'currentcolor',icon,size, class: iconClass} = Astro.props;
 const iconPath = iconPaths[icon];
 ---
 
 <svg
-  class="inline-block"
+  class={`inline-block ${iconClass}`}
   width="40"
   height="40"
   viewBox="0 0 256 256"
