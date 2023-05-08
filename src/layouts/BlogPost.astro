@@ -2,7 +2,6 @@
 import BaseHead from '../components/BaseHead.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
-import Body from '../components/Body.astro'
 import Content from '../components/Content.astro'
 import { SITE_TITLE } from '../consts'
 import Icon from '../components/Icon.astro'
@@ -28,39 +27,60 @@ const {
   <head>
     <BaseHead title={title + ` / ${SITE_TITLE}`} description={description} image={heroImage} />
   </head>
-
-  <Body>
-    <Header />
+  <body>
+    <Header title={SITE_TITLE}/>
     <main class="pt-[56px] mb-10">
       <Content className="pt-6">
 		<div class="mb-8">
 			{
 			  heroImage && (
 				<img
-				  class="border border-accent-gray rounded-xl"
+				  class="border border-accent-gray rounded-xl slide-item"
 				  width={720}
 				  height={360}
 				  src={heroImage}
 				  alt=""
+				  data-transition-duration="0.7s" data-transition-easing="ease"
 				/>
 			  )
 			}
 		  </div>
-        <h1 class="text-3xl my-1 font-bold text-sky-blue">{title}</h1>
-        <div class="my-4 flex">
+        <h1 class="text-3xl my-1 font-bold text-sky-blue slide-item" data-transition-duration="0.8s" data-transition-easing="ease">{title}</h1>
+        <div class="my-4 flex slide-item" data-transition-duration="0.9s" data-transition-easing="ease">
 			<p class='mr-2'>{description}</p>
 			<Icon icon="arrow-bend-right-down" size="1.1em" color="var(--accent-light)"/>
 		</div>
-		<div class="mb-5 indent-4">
+		<div class="mb-5 indent-4 slide-item" data-transition-duration="1s" data-transition-easing="ease">
 			<slot />
 		</div>
-		<div class="flex pt-2 mr-auto" style="font-size: var(--text-2sm);">
+		<div class="flex pt-2 mr-auto slide-item" style="font-size: var(--text-2sm);" data-transition-duration="1.1s" data-transition-easing="ease">
 			<span id='content-heading'>Stack:</span>{code}
 		</div>
-		<div class="flex pt-2 mr-auto" style="font-size: var(--text-2sm);">
+		<div class="flex pt-2 mr-auto slide-item" style="font-size: var(--text-2sm);" data-transition-duration="1.1s" data-transition-easing="ease">
 			<span id='content-heading'>Source:</span><a href={source}><Icon icon="github-logo" size="1.1em" color="var(--accent-light)"></a>
 		</div>
     </main>
-    <Footer />
-  </Body>
+	<div class="slide-item" data-transition-duration="1.2s" data-transition-easing="ease">
+		<Footer/>
+	</div>
+</body>
 </html>
+
+<script>
+    document.addEventListener('mousemove', (event) => {
+		const dot = document.getElementById('dot');
+		dot.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+	});
+
+	window.addEventListener('load', function() {
+		const slideItems = document.querySelectorAll('.slide-item');
+		slideItems.forEach(function(item, index) {
+			const duration = item.getAttribute('data-transition-duration') || '0.5s';
+			const easing = item.getAttribute('data-transition-easing') || 'ease';
+			item.style.transitionDuration = duration;
+			item.style.transitionTimingFunction = easing;
+			item.style.transitionDelay = `${index * 0.2}s`;
+			item.classList.add('slide-in');
+		});
+	});
+</script>
