@@ -71,3 +71,19 @@ span
   padding: 0px 4px 4px 4px;
   margin-right: 0.5em;
 }
+
+.slide-container {
+  overflow: hidden;
+}
+
+.slide-item {
+  opacity: 0;
+  transform: translateY(50px);
+  transition-property: opacity, transform;
+}
+
+.slide-item.slide-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
