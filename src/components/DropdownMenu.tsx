@@ -5,7 +5,7 @@ import DropdownMenuItem from './DropdownMenuItem'
 export default function DropdownMenu() {
   return (
     <Menu as="div" className="relative inline-block text-left">
-      <div>
+      <div className="slide-item" data-transition-duration="0.6s" data-transition-easing="ease">
         <Menu.Button
           className="inline-flex justify-center rounded-md border border-zinc-400 px-2 py-2 text-sm font-medium shadow-sm hover:bg-sky-blue hover:text-black-gray"
           aria-label="menu"

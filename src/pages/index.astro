@@ -35,17 +35,17 @@ const posts = (await Astro.glob('./posts/*.md')).sort(
 		<main class="p-60px p-8">
 			<div class="slide-container">
 				<div class="mx-auto max-w-2xl">
-					<div class="slide-item" data-transition-duration="1.4s" data-transition-easing="ease">
+					<div class="slide-item" data-transition-duration="1.2s" data-transition-easing="ease">
 						<section class="flex items-center indent-4" class="slide-item" style="margin-top: 25rem;">
 							<p><span class="hover-sticky hover:tracking-wider transition-all">{SITE_DESCRIPTION}</span>, I am a Junior Computer Science Student at Texas A&M University and a lifelong learner. Even though Nuclear Engineer was my first choice back in my Freshman year, I fell in love with coding after completing my Freshman year of Engineering classes. I now strive to become a full-stack developer focused on bringing a captivating experience to users.</p>
 						</section>
 					</div>
-					<div class="flex items-center mt-10 slide-item" data-transition-duration="1.6s" data-transition-easing="ease">
+					<div class="flex items-center mt-10 slide-item" data-transition-duration="1.4s" data-transition-easing="ease">
 						<h2 class="text-4xl underline underline-offset-4">
 							Works
 						</h2>
 					</div>
-					<section class="flex items-center mt-6 slide-item" data-transition-duration="1.8s" data-transition-easing="ease">
+					<section class="flex items-center mt-6 slide-item" data-transition-duration="1.6s" data-transition-easing="ease">
 						<ul class="grid grid-cols-1 gap-4">
 							{
 								posts.map(post => (
@@ -72,13 +72,13 @@ const posts = (await Astro.glob('./posts/*.md')).sort(
 							}
 						</ul>
 					</section>
-					<SocialMediaSection class="slide-item" data-transition-duration="2s" data-transition-easing="ease"/>
-					<Contact class="slide-item" data-transition-duration="2.2s" data-transition-easing="ease"/>
+					<SocialMediaSection class="slide-item" data-transition-duration="1.8s" data-transition-easing="ease"/>
+					<Contact class="slide-item" data-transition-duration="2.0s" data-transition-easing="ease"/>
 				</div>
 			<Content/>
 		</div>
 		</main>
-		<Footer class="slide-item"  data-transition-duration="2.4s" data-transition-easing="ease"/>
+		<Footer class="slide-item"  data-transition-duration="2.2s" data-transition-easing="ease"/>
 	</body>
 </html>
 
@@ -87,8 +87,6 @@ const posts = (await Astro.glob('./posts/*.md')).sort(
 		const dot = document.getElementById('dot');
 		dot.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
 	});
-
-
 
 	window.addEventListener('load', function() {
 		const slideItems = document.querySelectorAll('.slide-item');
