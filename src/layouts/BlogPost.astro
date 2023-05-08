@@ -28,6 +28,12 @@ const {
     <BaseHead title={title + ` / ${SITE_TITLE}`} description={description} image={heroImage} />
   </head>
   <body>
+	<div
+      id="dot"
+      class="pointer-events-none fixed z-50 h-2 w-2 rounded-full bg-orange-200"
+      style="transition: transform 0.2s;"
+    >
+    </div>
     <Header title={SITE_TITLE}/>
     <main class="pt-[56px] mb-10">
       <Content className="pt-6">
