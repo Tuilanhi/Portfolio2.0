@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        '2.5xl': '2.5rem',
+      },
     },
     colors: {
       transparent: 'transparent',
