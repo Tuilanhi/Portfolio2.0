@@ -1,17 +1,18 @@
 ---
-import { NAME } from '../consts';
-const today = new Date()
+import { NAME } from "../consts";
+const today = new Date();
 ---
 
 <footer>
-	<span>{today.getFullYear()}</span>, {NAME}. All Rights Reserved
+	<span>&copy; {today.getFullYear()}</span>
+	{NAME}. All Rights Reserved
+	<style>
+		footer {
+			padding: 25px;
+			text-align: center;
+			position: relative;
+			bottom: 0;
+			font-size: var(--text-sm);
+		}
+	</style>
 </footer>
-<style>
-	footer {
-		padding: 25px;
-		text-align: center;
-		position: relative;
-		bottom:0;
-		font-size: var(--text-sm);
-	}
-</style>

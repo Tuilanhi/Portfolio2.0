@@ -1,18 +1,19 @@
 ---
-import HeaderLink from './HeaderLink.astro'
-import DropdownMenu from './DropdownMenu'
+import HeaderLink from "./HeaderLink.astro";
+import DropdownMenu from "./DropdownMenu";
 ---
 
 <header class="relative z-20 mb-8 w-full p-2">
   <div class="mx-auto max-w-3xl">
     <nav class="flex items-center justify-between gap-3 text-base">
       <a href="/">
-        <h2
-          class="font-mplus pt-2 text-lg font-semibold uppercase tracking-wide slide-item" data-transition-duration="0.2s" data-transition-easing="ease"
-        >
-          Nhi Thuy Vu
-        </h2>
-        <p class="slide-item" style="font-size: var(--text-sm);" data-transition-duration="0.3s" data-transition-easing="ease">Computer Science Student</p>
+        <img
+          class="slide-item h-10 w-10 opacity-90"
+          src="/white-logo.png"
+          alt="white-logo"
+          data-transition-duration="0.4s"
+          data-transition-easing="ease"
+        />
       </a>
       <div class="flex items-center gap-6 text-base md:hidden">
         <DropdownMenu client:visible />

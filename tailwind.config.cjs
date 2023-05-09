@@ -12,11 +12,11 @@ module.exports = {
     },
     colors: {
       transparent: 'transparent',
-      current: 'currentColor',
       'white': '#ffffff',
       'black-gray': "#1f1f1f",
       'accent-gray': "#27272a",
       'sky-blue': '#c6d8f4',
+      'accent-lighter': "#f4e7d4",
     },
   },
   plugins: [require("flowbite/plugin"), require("prettier-plugin-tailwindcss")],
