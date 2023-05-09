@@ -12,13 +12,13 @@ export interface Props {
     createdAt?: string;
     updatedAt?: string;
     heroImage?: string;
-    tags: string[];
+    shortDescription: string;
     code: string;
     source: string;
   };
 }
 const {
-  content: { title, description, heroImage, code, source },
+  content: { title, description, shortDescription, heroImage, code, source },
 } = Astro.props;
 ---
 

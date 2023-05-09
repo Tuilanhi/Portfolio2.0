@@ -3,6 +3,7 @@ description: Official Webpage for a Vietnamese Sneaker Company
 public: true
 layout: ../../layouts/BlogPost.astro
 title: Dai Co Viet Webpage
+shortDescription: Web Application | 2022
 createdAt: 1663138523826
 updatedAt: 1663138544071
 heroImage: /dcv-banner.png

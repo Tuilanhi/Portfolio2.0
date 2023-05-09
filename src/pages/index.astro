@@ -76,7 +76,7 @@ const posts = (await Astro.glob("./posts/*.md")).sort(
             <ul class="grid grid-cols-1 gap-4">
               {
                 posts.map((post) => (
-                  <li class="mb-4 text-center transition-all hover:tracking-wider hover:text-sky-blue">
+                  <li class="mb-10 text-center transition-all hover:tracking-wider hover:text-sky-blue">
                     <a href={post.url}>
                       <Image
                         class="transform rounded-xl border border-accent-gray transition-transform duration-300 hover:scale-105 hover:opacity-100 md:opacity-70"
@@ -91,6 +91,14 @@ const posts = (await Astro.glob("./posts/*.md")).sort(
                       >
                         {post.frontmatter.title}
                       </div>
+                      {post.frontmatter.shortDescription && (
+                        <div
+                          class="opacity-80"
+                          style="font-size: var(--text-2sm);"
+                        >
+                          {post.frontmatter.shortDescription}
+                        </div>
+                      )}
                     </a>
                   </li>
                 ))

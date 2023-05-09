@@ -3,6 +3,7 @@ description: A new POS for Chick-fil-A
 public: true
 layout: ../../layouts/BlogPost.astro
 title: Chick-fil-A POS
+shortDescription: Web Application | 2023
 createdAt: 1663138523826
 updatedAt: 1663138544071
 heroImage: /chick-fil-a.PNG

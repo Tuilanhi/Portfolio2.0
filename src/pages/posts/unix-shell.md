@@ -3,6 +3,7 @@ description: Linux-Bash Unix shell with inter-process communication
 public: true
 layout: ../../layouts/BlogPost.astro
 title: Unix Shell
+shortDescription: C++ Software | 2022
 createdAt: 1663138523826
 updatedAt: 1663138544071
 heroImage: /unix-shell.PNG

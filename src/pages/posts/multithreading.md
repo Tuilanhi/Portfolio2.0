@@ -3,6 +3,7 @@ description: TCP Request Channel using multi-threaded communication
 public: true
 layout: ../../layouts/BlogPost.astro
 title: TCP Request Channel
+shortDescription: C++ Software | 2022
 createdAt: 1663138523826
 updatedAt: 1663138544071
 heroImage: /threading.PNG
