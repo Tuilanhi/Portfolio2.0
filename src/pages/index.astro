@@ -8,6 +8,7 @@ import Contact from "../components/Contact.astro";
 import Content from "../components/Content.astro";
 import { Image } from "@astrojs/image/components";
 import WordAnimation from "../components/WordAnimation.astro";
+import Icon from "../components/Icon.astro";
 
 const posts = (await Astro.glob("./posts/*.md")).sort(
   (a: any, b: any) =>
@@ -52,9 +53,9 @@ const posts = (await Astro.glob("./posts/*.md")).sort(
               <p>
                 <span class="hover-sticky transition-all hover:tracking-wider"
                   >{SITE_DESCRIPTION}</span
-                >, I am a Junior Computer Science Student at Texas A&M
+                >, I am a Junior Computer Science student at Texas A&M
                 University and a lifelong learner. Even though Nuclear Engineer
-                was my first choice back in my Freshman year, I fell in love
+                was my first choice back in my freshman year, I fell in love
                 with coding after completing my Freshman year of Engineering
                 classes. I now strive to become a full-stack developer focused
                 on bringing a captivating experience to users.
@@ -67,6 +68,12 @@ const posts = (await Astro.glob("./posts/*.md")).sort(
             data-transition-easing="ease"
           >
             <h2 class="text-4xl underline underline-offset-4">Works</h2>
+            <Icon
+            icon="arrow-bend-right-down"
+            size="1.2em"
+            color="var(--accent-light)"
+            class="ml-1 mt-7"
+            />
           </div>
           <section
             class="slide-item mt-6 flex items-center"

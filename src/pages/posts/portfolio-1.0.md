@@ -3,7 +3,7 @@ description: Portfolio 1.0 built with HTML & CSS
 public: true
 layout: ../../layouts/BlogPost.astro
 title: Portfolio 1.0
-shortDescription: Web Application | 2021
+shortDescription: Web Application | 2022
 createdAt: 1663138523826
 updatedAt: 1663138544071
 heroImage: /portfolio-1.0.png
