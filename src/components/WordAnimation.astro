@@ -1,22 +1,22 @@
 <section
-  class="whitespace-no-wrap relative my-32 block w-screen items-center justify-center gap-6 text-5xl uppercase leading-6 text-black sm:text-7xl"
+  class="whitespace-no-wrap relative my-32 block w-screen items-center justify-center gap-6 text-2.5xl uppercase leading-6 text-black sm:text-7xl"
 >
   <div id="my-section" style="display: none;">
     <h3
       class="mb-10 rounded-full border-2 bg-sky-blue py-3 pl-4"
-      style="position: relative; max-width: 27rem;"
+      style="position: relative;"
     >
       Simple Code
     </h3>
     <h3
       class="mb-10 rounded-full border-2 bg-sky-blue py-3 pl-4"
-      style="position: relative; max-width: 40rem;"
+      style="position: relative;"
     >
       Simple Workflow
     </h3>
     <h3
       class="rounded-full border-2 bg-sky-blue py-3 pl-4"
-      style="position: relative; max-width: 32rem;"
+      style="position: relative;"
     >
       Simple Clarity
     </h3>
@@ -25,24 +25,40 @@
   <div id="my-section" style="display: none;">
     <h3
       class="mb-10 rounded-full border-2 bg-sky-blue py-3 pl-4"
-      style="position: relative; max-width: 31rem;"
+      style="position: relative;"
     >
       Simple Design
     </h3>
     <h3
       class="mb-10 rounded-full border-2 bg-sky-blue py-3 pl-4"
-      style="position: relative; max-width: 35rem;"
+      style="position: relative;"
     >
       Simple Strategy
     </h3>
     <h3
       class="rounded-full border-2 bg-sky-blue py-3 pl-4"
-      style="position: relative; max-width: 37rem;"
+      style="position: relative;"
     >
       Simple Approach
     </h3>
   </div>
 </section>
+
+<style>
+  @media (max-width: 640px) {
+    /* Medium screen and below */
+    #my-section h3 {
+      max-width: 36rem;
+    }
+  }
+
+  @media (min-width: 641px) {
+    /* Larger than medium screen */
+    #my-section h3 {
+      max-width: 40rem;
+    }
+  }
+</style>
 
 <script>
   // get all the h3 elements
