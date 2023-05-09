@@ -9,6 +9,12 @@ import image from "@astrojs/image";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://tuilanhi.github.io',
-  integrations: [mdx(), sitemap(), tailwind(), react(), image({serviceEntryPoint: '@astrojs/image/sharp'})]
+  integrations: [mdx(), sitemap(), tailwind(), react(), image({serviceEntryPoint: '@astrojs/image/sharp'})],
+  experimental: {
+    assets: true,
+  },
+  image: {
+    service: sharpImageService(),
+  },
 });
 
