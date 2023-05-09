@@ -16,15 +16,13 @@ export default function DropdownMenu() {
 
         <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md border border-zinc-700 bg-accent-gray">
           <div className="py-1 text-sm">
-            <DropdownMenuItem href="/blog">
-                    Blog
-                </DropdownMenuItem>
                 <DropdownMenuItem href="/about">
                     About
                 </DropdownMenuItem>
                 <DropdownMenuItem href="https://drive.google.com/file/d/1kEYJiNMHdcBPOI0kir2n3yFmbb4DBuYo/view?usp=sharing">
-                    Resume
+                    Download CV
                 </DropdownMenuItem>
+                <DropdownMenuItem href="mailto:vuthuynhi05@gmail.com">Contact</DropdownMenuItem>
             </div>
         </Menu.Items>
     </Menu>
