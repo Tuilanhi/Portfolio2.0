@@ -1,21 +1,47 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
-import DropdownMenu from './DropdownMenu';
+import HeaderLink from './HeaderLink.astro'
+import DropdownMenu from './DropdownMenu'
 ---
 
 <header class="relative z-20 mb-8 w-full p-2">
   <div class="mx-auto max-w-3xl">
     <nav class="flex items-center justify-between gap-3 text-base">
       <a href="/">
-        <img class="w-10 h-10 opacity-90 slide-item" src="/white-logo.png" alt="white-logo" data-transition-duration="0.3s" data-transition-easing="ease"/>
+        <h2
+          class="font-mplus pt-2 text-lg font-semibold uppercase tracking-wide slide-item" data-transition-duration="0.2s" data-transition-easing="ease"
+        >
+          Nhi Thuy Vu
+        </h2>
+        <p class="slide-item" style="font-size: var(--text-sm);" data-transition-duration="0.3s" data-transition-easing="ease">Computer Science Student</p>
       </a>
       <div class="flex items-center gap-6 text-base md:hidden">
-        <DropdownMenu client:visible/>
+        <DropdownMenu client:visible />
       </div>
-      <div class="hidden md:flex items-center gap-6 text-base">
-        <HeaderLink href="/blog" class="slide-item" data-transition-duration="0.4s" data-transition-easing="ease">Blog</HeaderLink>
-        <HeaderLink href="/about" class="slide-item" data-transition-duration="0.5s" data-transition-easing="ease">About</HeaderLink>
-        <HeaderLink href="https://drive.google.com/file/d/1kEYJiNMHdcBPOI0kir2n3yFmbb4DBuYo/view?usp=sharing" class="slide-item" data-transition-duration="0.6s" data-transition-easing="ease">Resume</HeaderLink>
+      <div class="hidden items-center gap-6 text-base md:flex">
+        <HeaderLink
+          href="/blog"
+          class="slide-item"
+          data-transition-duration="0.4s"
+          data-transition-easing="ease"
+        >
+          Blog
+        </HeaderLink>
+        <HeaderLink
+          href="/about"
+          class="slide-item"
+          data-transition-duration="0.5s"
+          data-transition-easing="ease"
+        >
+          About
+        </HeaderLink>
+        <HeaderLink
+          href="https://drive.google.com/file/d/1kEYJiNMHdcBPOI0kir2n3yFmbb4DBuYo/view?usp=sharing"
+          class="slide-item"
+          data-transition-duration="0.6s"
+          data-transition-easing="ease"
+        >
+          Resume
+        </HeaderLink>
         <div class="ml-auto flex-1"></div>
       </div>
     </nav>

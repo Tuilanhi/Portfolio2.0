@@ -1,0 +1,64 @@
+<section
+  class="whitespace-no-wrap relative my-32 block w-screen items-center justify-center gap-6 text-5xl uppercase leading-6 text-black sm:text-7xl"
+>
+  <div id="my-section" style="display: none;">
+    <h3
+      class="mb-10 rounded-full border-2 bg-sky-blue py-3 pl-4"
+      style="position: relative; max-width: 27rem;"
+    >
+      Simple Code
+    </h3>
+    <h3
+      class="mb-10 rounded-full border-2 bg-sky-blue py-3 pl-4"
+      style="position: relative; max-width: 40rem;"
+    >
+      Simple Workflow
+    </h3>
+    <h3
+      class="rounded-full border-2 bg-sky-blue py-3 pl-4"
+      style="position: relative; max-width: 32rem;"
+    >
+      Simple Clarity
+    </h3>
+  </div>
+
+  <div id="my-section" style="display: none;">
+    <h3
+      class="mb-10 rounded-full border-2 bg-sky-blue py-3 pl-4"
+      style="position: relative; max-width: 31rem;"
+    >
+      Simple Design
+    </h3>
+    <h3
+      class="mb-10 rounded-full border-2 bg-sky-blue py-3 pl-4"
+      style="position: relative; max-width: 35rem;"
+    >
+      Simple Strategy
+    </h3>
+    <h3
+      class="rounded-full border-2 bg-sky-blue py-3 pl-4"
+      style="position: relative; max-width: 37rem;"
+    >
+      Simple Approach
+    </h3>
+  </div>
+</section>
+
+<script>
+  // get all the h3 elements
+  const headings = document.querySelectorAll("#my-section");
+  let currentIndex = 0;
+
+  // display the first heading immediately
+  headings[currentIndex].style.display = "block";
+
+  // set up a loop to cycle through the headings with a delay
+  setInterval(() => {
+    // hide the current heading
+    headings[currentIndex].style.display = "none";
+    // move to the next heading
+    currentIndex = (currentIndex + 1) % headings.length;
+    // display the next heading
+    headings[currentIndex].style.display = "block";
+  }, 2000);
+</script>

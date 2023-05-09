@@ -1,20 +1,19 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-import SocialMediaSection from '../components/SocialMediaSection.astro'
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
-import Contact from '../components/Contact.astro'
-import Content from '../components/Content.astro'
-import { Image } from '@astrojs/image/components'
-import NameAnimation from '../components/NameAnimation.astro'
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import SocialMediaSection from "../components/SocialMediaSection.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Contact from "../components/Contact.astro";
+import Content from "../components/Content.astro";
+import { Image } from "@astrojs/image/components";
+import WordAnimation from "../components/WordAnimation.astro";
 
-const posts = (await Astro.glob('./posts/*.md')).sort(
+const posts = (await Astro.glob("./posts/*.md")).sort(
   (a: any, b: any) =>
     new Date(b.frontmatter.createdAt).valueOf() -
     new Date(a.frontmatter.createdAt).valueOf()
-)
-
+);
 ---
 
 <!DOCTYPE html>
@@ -25,7 +24,7 @@ const posts = (await Astro.glob('./posts/*.md')).sort(
   <body>
     <div
       id="dot"
-      class="pointer-events-none fixed z-50 h-2 w-2 rounded-full bg-orange-200"
+      class="pointer-events-none rounded-full fixed z-50 h-2 w-2 bg-orange-200"
       style="transition: transform 0.2s;"
     >
     </div>
@@ -35,10 +34,10 @@ const posts = (await Astro.glob('./posts/*.md')).sort(
         <div class="mx-auto max-w-2xl">
           <div
             class="slide-item flex items-center"
-            data-transition-duration="0.8s"
+            data-transition-duration="0.7s"
             data-transition-easing="ease"
           >
-            <NameAnimation />
+            <WordAnimation />
           </div>
           <div
             class="slide-item"
@@ -48,7 +47,7 @@ const posts = (await Astro.glob('./posts/*.md')).sort(
             <section
               class="flex items-center indent-4"
               class="slide-item"
-              style="margin-top: 15rem;"
+              style="margin-top: 5rem;"
             >
               <p>
                 <span class="hover-sticky transition-all hover:tracking-wider"
@@ -76,11 +75,11 @@ const posts = (await Astro.glob('./posts/*.md')).sort(
           >
             <ul class="grid grid-cols-1 gap-4">
               {
-                posts.map(post => (
-                  <li class="hover:text-sky-blue mb-4 text-center transition-all hover:tracking-wider">
+                posts.map((post) => (
+                  <li class="mb-4 text-center transition-all hover:tracking-wider hover:text-sky-blue">
                     <a href={post.url}>
                       <Image
-                        class="border-accent-gray transform rounded-xl border transition-transform duration-300 hover:scale-105 hover:opacity-100 md:opacity-70"
+                        class="transform rounded-xl border border-accent-gray transition-transform duration-300 hover:scale-105 hover:opacity-100 md:opacity-70"
                         src={post.frontmatter.heroImage}
                         width={720 * 2}
                         aspectRatio={2}
@@ -123,24 +122,24 @@ const posts = (await Astro.glob('./posts/*.md')).sort(
     >
       <Footer />
     </div>
+    <script>
+      document.addEventListener("mousemove", (event) => {
+        const dot = document.getElementById("dot");
+        dot.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+      });
+
+      window.addEventListener("load", function () {
+        const slideItems = document.querySelectorAll(".slide-item");
+        slideItems.forEach(function (item, index) {
+          const duration =
+            item.getAttribute("data-transition-duration") || "0.5s";
+          const easing = item.getAttribute("data-transition-easing") || "ease";
+          item.style.transitionDuration = duration;
+          item.style.transitionTimingFunction = easing;
+          item.style.transitionDelay = `${index * 0.2}s`;
+          item.classList.add("slide-in");
+        });
+      });
+    </script>
   </body>
 </html>
-
-<script>
-  document.addEventListener('mousemove', (event) => {
-    const dot = document.getElementById('dot');
-    dot.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
-  });
-
-window.addEventListener('load', function() {
-  const slideItems = document.querySelectorAll('.slide-item');
-  slideItems.forEach(function(item, index) {
-    const duration = item.getAttribute('data-transition-duration') || '0.5s';
-    const easing = item.getAttribute('data-transition-easing') || 'ease';
-    item.style.transitionDuration = duration;
-    item.style.transitionTimingFunction = easing;
-    item.style.transitionDelay = `${index * 0.2}s`;
-    item.classList.add('slide-in');
-  });
-});
-</script>
