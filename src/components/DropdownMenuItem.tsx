@@ -17,8 +17,8 @@ export default function DropdownMenuItem({ href, children }: Props) {
         <a
           href={href}
           className={classNames(
-            active ? 'bg-sky-blue' : '',
-            'block px-4 py-2 text-lg hover:text-black'
+            active ? 'bg-sky-blue text-black' : '',
+            'block px-4 py-2 text-lg'
           )}
         >
           {children}

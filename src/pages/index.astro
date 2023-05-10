@@ -25,7 +25,7 @@ const posts = (await Astro.glob("./posts/*.md")).sort(
   <body>
     <div
       id="dot"
-      class="pointer-events-none fixed z-50 h-2 w-2 rounded-full bg-orange-200"
+      class="pointer-events-none fixed z-50 hidden h-2 w-2 rounded-full bg-orange-200"
       style="transition: transform 0.2s;"
     >
     </div>
@@ -69,10 +69,10 @@ const posts = (await Astro.glob("./posts/*.md")).sort(
           >
             <h2 class="text-4xl underline underline-offset-4">Works</h2>
             <Icon
-            icon="arrow-bend-right-down"
-            size="1.2em"
-            color="var(--accent-light)"
-            class="ml-1 mt-7"
+              icon="arrow-bend-right-down"
+              size="1.2em"
+              color="var(--accent-light)"
+              class="ml-1 mt-7"
             />
           </div>
           <section
@@ -138,9 +138,27 @@ const posts = (await Astro.glob("./posts/*.md")).sort(
       <Footer />
     </div>
     <script>
+      // Check if the device is a laptop and has a mouse
+      const isLaptopWithMouse = () => {
+        const isTouchDevice =
+          "ontouchstart" in window || navigator.maxTouchPoints > 0;
+        const isLaptop = window.innerWidth >= 1024;
+        return isLaptop && !isTouchDevice;
+      };
+
+      // Show or hide the dot based on the device type
+      const dotElement = document.getElementById("dot");
+      if (isLaptopWithMouse()) {
+        dotElement.classList.remove("hidden");
+      } else {
+        dotElement.classList.add("hidden");
+      }
+
+      // Move the dot with the mouse
       document.addEventListener("mousemove", (event) => {
-        const dot = document.getElementById("dot");
-        dot.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+        if (isLaptopWithMouse()) {
+          dotElement.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+        }
       });
 
       window.addEventListener("load", function () {
