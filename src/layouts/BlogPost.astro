@@ -34,7 +34,7 @@ const {
   <body>
     <div
       id="dot"
-      class="pointer-events-none fixed z-50 h-2 w-2 rounded-full bg-orange-200"
+      class="pointer-events-none fixed z-50 hidden h-2 w-2 rounded-full bg-orange-200"
       style="transition: transform 0.2s;"
     >
     </div>
@@ -92,7 +92,7 @@ const {
           <span id="content-heading">Stack:</span>{code}
         </div>
         <div
-          class="slide-item mr-auto flex pt-2 mb-10"
+          class="slide-item mb-10 mr-auto flex pt-2"
           style="font-size: var(--text-2sm);"
           data-transition-duration="1.1s"
           data-transition-easing="ease"
@@ -108,17 +108,35 @@ const {
       </Content>
     </main>
     <div
-          class="slide-item"
-          data-transition-duration="1.2s"
-          data-transition-easing="ease"
-        >
-          <Footer />
-        </div>
+      class="slide-item"
+      data-transition-duration="1.2s"
+      data-transition-easing="ease"
+    >
+      <Footer />
+    </div>
 
     <script>
+      // Check if the device is a laptop and has a mouse
+      const isLaptopWithMouse = () => {
+        const isTouchDevice =
+          "ontouchstart" in window || navigator.maxTouchPoints > 0;
+        const isLaptop = window.innerWidth >= 1024;
+        return isLaptop && !isTouchDevice;
+      };
+
+      // Show or hide the dot based on the device type
+      const dotElement = document.getElementById("dot");
+      if (isLaptopWithMouse()) {
+        dotElement.classList.remove("hidden");
+      } else {
+        dotElement.classList.add("hidden");
+      }
+
+      // Move the dot with the mouse
       document.addEventListener("mousemove", (event) => {
-        const dot = document.getElementById("dot");
-        dot.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+        if (isLaptopWithMouse()) {
+          dotElement.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+        }
       });
 
       window.addEventListener("load", function () {
@@ -134,5 +152,5 @@ const {
         });
       });
     </script>
-    </body>
+  </body>
 </html>

@@ -14,7 +14,7 @@ import Icon from "../components/Icon.astro";
 	<body>
 		<div
 			id="dot"
-			class="pointer-events-none fixed z-50 h-2 w-2 rounded-full bg-orange-200"
+			class="pointer-events-none fixed z-50 hidden h-2 w-2 rounded-full bg-orange-200"
 			style="transition: transform 0.2s;"
 		>
 		</div>
@@ -22,25 +22,56 @@ import Icon from "../components/Icon.astro";
 		<main class="p-60px p-8">
 			<div class="slide-container">
 				<div class="mx-auto max-w-2xl">
-					<div class= "flex items-center justify-center slide-item" data-transition-duration="0.7s"
-					data-transition-easing="ease">
-						<img class= "flex items-center justify-center h-auto w-auto" src="/profile.jpg" alt="profile-image"/>
+					<div
+						class="slide-item flex items-center justify-center"
+						data-transition-duration="0.7s"
+						data-transition-easing="ease"
+					>
+						<img
+							class="flex h-auto w-auto items-center justify-center"
+							src="/profile.jpg"
+							alt="profile-image"
+						/>
 					</div>
-					<div class="flex items-center my-10 slide-item" data-transition-duration="0.8s"
-					data-transition-easing="ease">
+					<div
+						class="slide-item my-10 flex items-center"
+						data-transition-duration="0.8s"
+						data-transition-easing="ease"
+					>
 						<h2 class="text-4xl">
-						<Icon
-						class="icon-shake"
-						icon="hand-waving"
-						size="0.8em"
-						color="var(--accent-lighter)"
-						/> Hi there,
+							<Icon
+								class="icon-shake"
+								icon="hand-waving"
+								size="0.8em"
+								color="var(--accent-lighter)"
+							/> Hi there,
 						</h2>
 					</div>
-					<p class="mb-7 slide-item" data-transition-duration="0.9s"
-					data-transition-easing="ease">My name is Nhi Vu, and I am a Computer Science student with 3 years of experience in programming. I developed a passion for developing software and applications that are innovative and impactful to both individuals and a wide range of businesses. In the past few years, I have experience working with a team on projects and maintaining an application system.</p>
-					<p class="slide-item" data-transition-duration="1s"
-					data-transition-easing="ease">During my free time, I enjoy various hobbies that contribute to bringing in new ideas, such as learning a new programming language, working on a personal project, and watching movies. I also enjoy researching on-trend topics that could enhance my skillsets and knowledge about technologies.</p>
+					<p
+						class="slide-item mb-7"
+						data-transition-duration="0.9s"
+						data-transition-easing="ease"
+					>
+						My name is Nhi Vu, and I am a Computer Science student
+						with 3 years of experience in programming. I developed a
+						passion for developing software and applications that
+						are innovative and impactful to both individuals and a
+						wide range of businesses. In the past few years, I have
+						experience working with a team on projects and
+						maintaining an application system.
+					</p>
+					<p
+						class="slide-item"
+						data-transition-duration="1s"
+						data-transition-easing="ease"
+					>
+						During my free time, I enjoy various hobbies that
+						contribute to bringing in new ideas, such as learning a
+						new programming language, working on a personal project,
+						and watching movies. I also enjoy researching on-trend
+						topics that could enhance my skillsets and knowledge
+						about technologies.
+					</p>
 				</div>
 			</div>
 		</main>
@@ -52,9 +83,27 @@ import Icon from "../components/Icon.astro";
 			<Footer />
 		</div>
 		<script>
+			// Check if the device is a laptop and has a mouse
+			const isLaptopWithMouse = () => {
+				const isTouchDevice =
+					"ontouchstart" in window || navigator.maxTouchPoints > 0;
+				const isLaptop = window.innerWidth >= 1024;
+				return isLaptop && !isTouchDevice;
+			};
+
+			// Show or hide the dot based on the device type
+			const dotElement = document.getElementById("dot");
+			if (isLaptopWithMouse()) {
+				dotElement.classList.remove("hidden");
+			} else {
+				dotElement.classList.add("hidden");
+			}
+
+			// Move the dot with the mouse
 			document.addEventListener("mousemove", (event) => {
-				const dot = document.getElementById("dot");
-				dot.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+				if (isLaptopWithMouse()) {
+					dotElement.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
+				}
 			});
 
 			window.addEventListener("load", function () {
