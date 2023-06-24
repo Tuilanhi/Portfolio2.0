@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy-dev" : "curl -X POST -d {} https://api.netlify.com/build_hooks/6459ee72141c1f2d6eb42125"
+    "deploy-dev": "curl -X POST -d {} https://api.netlify.com/build_hooks/6459ee72141c1f2d6eb42125"
   },
   "dependencies": {
     "@astrojs/image": "^0.16.7",
