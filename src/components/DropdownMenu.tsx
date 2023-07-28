@@ -19,7 +19,7 @@ export default function DropdownMenu() {
                 <DropdownMenuItem href="/about">
                     About
                 </DropdownMenuItem>
-                <DropdownMenuItem href="https://drive.google.com/file/d/1kEYJiNMHdcBPOI0kir2n3yFmbb4DBuYo/view?usp=sharing">
+                <DropdownMenuItem href="https://drive.google.com/file/d/1dDgBqAg6Lc5N58lPqxgQve7FL10qr0bx/view?usp=sharing">
                     Download CV
                 </DropdownMenuItem>
                 <DropdownMenuItem href="mailto:vuthuynhi05@gmail.com">Contact</DropdownMenuItem>
